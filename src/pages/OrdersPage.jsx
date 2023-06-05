@@ -16,7 +16,7 @@ const OrdersPage = () => {
   const fetchOrders = async () => {
     try {
       // Replace with your API endpoint to fetch orders
-      const response = await fetch(`http://localhost:8080/api/v1/orders/user/${email}`);
+      const response = await fetch(`https://loadconnect.azurewebsites.net/api/v1/orders/user/${email}`);
       const data = await response.json();
       setOrders(data);
     } catch (error) {

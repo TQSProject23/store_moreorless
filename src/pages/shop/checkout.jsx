@@ -15,7 +15,7 @@ export const Checkout = () => {
   const [selectedPps, setSelectedPps] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/pps/all")
+    fetch("https://loadconnect.azurewebsites.net/api/v1/pps/all")
       .then((response) => response.json())
       .then((data) => setPps(data));
   }, []);
@@ -31,7 +31,7 @@ export const Checkout = () => {
       selectedPps
     );
     try {
-      const response = await fetch("http://localhost:8080/api/v1/orders/new", {
+      const response = await fetch("https://loadconnect.azurewebsites.net/api/v1/orders/new", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
